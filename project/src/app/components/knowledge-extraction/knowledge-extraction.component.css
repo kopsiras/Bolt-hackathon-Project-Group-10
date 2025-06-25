@@ -280,69 +280,52 @@
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .nav-content {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 16px;
+    padding: 12px 20px;
   }
 
   .nav-icons {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-    width: 100%;
+    gap: 40px;
   }
 
-  .nav-icon {
-    padding: 10px;
+  .nav-icon svg {
+    width: 24px;
+    height: 24px;
   }
 
   .profile-section {
-    position: static;
-    margin-top: 12px;
-    align-self: flex-end;
+    right: 20px;
+  }
+
+  .profile-avatar {
+    width: 38px;
+    height: 38px;
   }
 
   .main-content {
-    padding: 20px 12px;
+    padding: 30px 16px;
+  }
+
+  .content-wrapper {
+    max-width: 100%;
+    gap: 25px;
   }
 
   .page-title {
-    font-size: 18px;
-    text-align: center;
+    font-size: 20px;
   }
 
-  .upload-button {
-    flex-direction: column;
-    gap: 6px;
-    padding: 10px 16px;
-    font-size: 14px;
-    width: 100%;
+  .form-section {
+    gap: 20px;
   }
 
-  .upload-icon-circle {
-    width: 28px;
-    height: 28px;
+    .content-wrapper {
+    max-width: 100%;
+    gap: 25px;
   }
-
-  .file-name-display {
-    font-size: 12px;
-    margin-top: -10px;
-  }
-
   .progress-bar {
-    width: 100%;
-    max-width: 160px;
+    width: 180px; /* Adjust for mobile */
   }
 
-  .progress-text {
-    font-size: 12px;
-  }
-
-  .complete-button {
-    padding: 10px 20px;
-    font-size: 14px;
-    width: 100%;
-  }
 }

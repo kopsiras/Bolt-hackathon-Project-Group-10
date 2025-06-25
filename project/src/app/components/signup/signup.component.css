@@ -1,302 +1,190 @@
+/* Reset Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kanit", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
 .container {
-  background-color: #dcf2ff;
-  min-height: 100vh;
-  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-}
-
-/* Desktop/Tablet View (Original Design) */
-.desktop-view {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 1280px;
   height: 100vh;
-  align-items: center;
-}
-
-.mobile-view {
-  display: none;
-}
-
-.bg-light-blue {
-  background-color: #dcf2ff;
 }
 
 .card {
-  width: 400px;
-  border-radius: 20px;
-  box-shadow: none;
-  border: none;
-  background-color: white;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 48px 48px 40px 48px;
 }
 
 .title {
+  font-size: 28px;
   font-weight: 600;
-  font-size: 1.25rem;
-  margin-bottom: 32px;
-  color: black;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center; /* << เพิ่มบรรทัดนี้ */
 }
 
 .form-container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
 .input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .label {
-  font-weight: 400;
-  font-size: 0.875rem;
-  color: black;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #444;
 }
 
 .input-field {
-  height: 40px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  border: 1px solid #e5e5e5;
-  background-color: #f8f8f8;
-  font-size: 0.875rem;
-  padding: 0 12px;
-  outline: none;
-  transition: border-color 0.2s;
+  font-size: 16px;
+  transition: border 0.3s ease;
 }
 
 .input-field:focus {
-  border-color: #4a90e2;
+  border-color: #007bff;
+  outline: none;
 }
 
-/* Message Box Styles (reused from login) */
-.message-box {
+.button-container {
+  margin-top: 20px;
   width: 100%;
-  padding: 12px 16px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
   border-radius: 8px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 16px; /* Space between message and link-text */
-  box-sizing: border-box;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.message-error {
-  background-color: #ffe6e6; /* Light red background */
-  color: #ff0000; /* Red text */
-  border: 1px solid #ff0000; /* Red border */
-}
-
-.message-success {
-  background-color: #e6ffe6; /* Light green background */
-  color: #008000; /* Green text */
-  border: 1px solid #008000; /* Green border */
+.submit-button:hover {
+  background-color: #0056b3;
 }
 
 .link-text {
-  font-size: 0.75rem;
-  text-align: center;
-  margin-top: 16px;
-  color: #6b7280;
-}
-
-/* If a message is present, adjust the margin-top for link-text */
-.message-box + .link-text {
-    margin-top: 8px; /* Reduce gap if message is above */
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
 }
 
 .link {
-  color: #4a90e2;
+  color: #007bff;
   text-decoration: none;
-  transition: text-decoration 0.2s;
+  cursor: pointer;
 }
 
 .link:hover {
   text-decoration: underline;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
+.hidden {
+  display: none;
 }
 
-.submit-button {
-  width: 96px;
-  height: 36px;
-  background-color: #87ceeb;
-  color: black;
-  border: none;
-  border-radius: 18px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
+.mobile-view {
+  display: none;
 }
 
-.submit-button:hover {
-  background-color: #7bb8d9;
-}
-
-/* Mobile Design Styles */
-.form-wrapper {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 24px;
-}
-
-.mobile-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.mobile-label {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  color: #333333;
-  margin-bottom: 8px;
-}
-
-.mobile-input {
-  width: 100%;
-  height: 50px;
-  border-radius: 8px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 16px;
-  padding: 0 16px;
-  outline: none;
-  transition: background-color 0.2s;
-  box-sizing: border-box;
-}
-
-.mobile-input:focus {
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-/* Mobile Message Box Styles (reused from login) */
-.mobile-message-box {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-  margin-top: -16px; /* Adjust to reduce gap with input group above */
-  margin-bottom: 16px; /* Space between message and link-text */
-  box-sizing: border-box;
-}
-
-.mobile-message-error {
-  background-color: #ffe6e6;
-  color: #ff0000;
-  border: 1px solid #ff0000;
-}
-
-.mobile-message-success {
-  background-color: #e6ffe6;
-  color: #008000;
-  border: 1px solid #008000;
-}
-
-.mobile-link-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  text-align: center;
-  color: #333333;
-  margin-top: 8px;
-}
-
-/* If a message is present, adjust the margin-top for mobile-link-text */
-.mobile-message-box + .mobile-link-text {
-    margin-top: 8px; /* Reduce gap if message is above */
-}
-
-.mobile-link {
-  color: #4a90e2;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.mobile-link:hover {
-  text-decoration: underline;
-}
-
-.mobile-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-}
-
-.mobile-button {
-  width: 140px;
-  height: 48px;
-  background-color: #87ceeb;
-  color: #333333;
-  border: none;
-  border-radius: 24px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.mobile-button:hover {
-  background-color: #7bb8d9;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+/* Mobile Styles */
+@media screen and (max-width: 600px) {
   .desktop-view {
     display: none;
   }
-  
+
   .mobile-view {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 100%;
-    min-height: 100vh;
     padding: 20px;
   }
-}
 
-@media (max-width: 480px) {
-  .mobile-form {
-    gap: 28px;
+  .form-wrapper {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
+  .mobile-form div {
+    margin-bottom: 16px;
+  }
+
   .mobile-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .mobile-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
     font-size: 16px;
   }
-  
-  .mobile-input {
-    height: 48px;
-    font-size: 15px;
+
+  .mobile-button-container {
+    margin-top: 20px;
   }
-  
+
   .mobile-button {
-    width: 120px;
-    height: 44px;
-    font-size: 15px;
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .mobile-button:hover {
+    background-color: #0056b3;
+  }
+
+  .mobile-link-text {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  .mobile-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .mobile-link:hover {
+    text-decoration: underline;
   }
 }

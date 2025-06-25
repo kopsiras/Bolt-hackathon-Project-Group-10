@@ -1,123 +1,77 @@
-<div class="container">
-  <div class="desktop-view">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link rel="stylesheet" href="signup.component.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
     <div class="card">
-      <div class="card-content">
-        <h2 class="title">Create Account</h2>
+      <div class="card-content desktop-view">
+        <div id="registerForm">
+          <h2 class="title">Register</h2>
+          <form>
+            <div class="form-container">
+              <div class="input-group">
+                <label class="label">Username</label>
+                <input type="text" class="input-field" required />
+              </div>
+              <div class="input-group">
+                <label class="label">Email</label>
+                <input type="email" class="input-field" required />
+              </div>
+              <div class="input-group">
+                <label class="label">Password</label>
+                <input type="password" class="input-field" required />
+              </div>
+              <div class="input-group">
+                <label class="label">Confirm Password</label>
+                <input type="password" class="input-field" required />
+              </div>
+            </div>
+            <div class="button-container">
+              <button type="submit" class="submit-button">Register</button>
+            </div>
+          </form>
+          <p class="link-text">
+            Have an account? <a class="link" href="#">Login</a>
+          </p>
+        </div>
+      </div>
 
-        <form (ngSubmit)="onSubmit()" class="form-container">
-          <div class="input-group">
-            <label for="email" class="label">Email</label>
-            <input
-              id="email"
-              type="email"
-              [(ngModel)]="email"
-              name="email"
-              class="input-field"
-              required
-            />
-          </div>
-
-          <div class="input-group">
-            <label for="username" class="label">Username</label>
-            <input
-              id="username"
-              type="text"
-              [(ngModel)]="username"
-              name="username"
-              class="input-field"
-              required
-            />
-          </div>
-
-          <div class="input-group">
-            <label for="password" class="label">Password</label>
-            <input
-              id="password"
-              type="password"
-              [(ngModel)]="password"
-              name="password"
-              class="input-field"
-              required
-            />
-          </div>
-
-          <div
-            *ngIf="message"
-            class="message-box"
-            [ngClass]="{'message-success': isSuccess, 'message-error': !isSuccess}"
-          >
-            {{ message }}
-          </div>
-
-          <div class="link-text">
-            <span>Have an account? </span>
-            <a routerLink="/login" class="link">Login now.</a>
-          </div>
-
-          <div class="button-container">
-            <button type="submit" class="submit-button">Sign up</button>
-          </div>
-        </form>
+      <div class="mobile-view">
+        <div id="mobileRegisterForm" class="form-wrapper">
+          <h2 class="title">Register</h2>
+          <form class="mobile-form">
+            <div>
+              <label class="mobile-label">Username</label>
+              <input type="text" class="mobile-input" required />
+            </div>
+            <div>
+              <label class="mobile-label">Email</label>
+              <input type="email" class="mobile-input" required />
+            </div>
+            <div>
+              <label class="mobile-label">Password</label>
+              <input type="password" class="mobile-input" required />
+            </div>
+            <div>
+              <label class="mobile-label">Confirm Password</label>
+              <input type="password" class="mobile-input" required />
+            </div>
+            <div class="mobile-button-container">
+              <button type="submit" class="mobile-button">Register</button>
+            </div>
+          </form>
+          <p class="mobile-link-text">
+            Have an account? <a class="mobile-link" href="#">Login</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="mobile-view">
-    <div class="form-wrapper">
-      <form (ngSubmit)="onSubmit()" class="mobile-form">
-        <div class="input-group">
-          <label for="email-mobile" class="mobile-label">Email</label>
-          <input
-            id="email-mobile"
-            type="email"
-            [(ngModel)]="email"
-            name="email"
-            class="mobile-input"
-            required
-          />
-        </div>
-
-        <div class="input-group">
-          <label for="username-mobile" class="mobile-label">Username</label>
-          <input
-            id="username-mobile"
-            type="text"
-            [(ngModel)]="username"
-            name="username"
-            class="mobile-input"
-            required
-          />
-        </div>
-
-        <div class="input-group">
-          <label for="password-mobile" class="mobile-label">Password</label>
-          <input
-            id="password-mobile"
-            type="password"
-            [(ngModel)]="password"
-            name="password"
-            class="mobile-input"
-            required
-          />
-        </div>
-
-        <div
-          *ngIf="message"
-          class="mobile-message-box"
-          [ngClass]="{'mobile-message-success': isSuccess, 'mobile-message-error': !isSuccess}"
-        >
-          {{ message }}
-        </div>
-
-        <div class="mobile-link-text">
-          <span>Have an account? </span>
-          <a routerLink="/login" class="mobile-link">Login now.</a>
-        </div>
-
-        <div class="mobile-button-container">
-          <button type="submit" class="mobile-button">Signup</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+</body>
+</html>

@@ -23,7 +23,7 @@ export class LoginComponent {
   passwordFieldType: string = 'password';
 
   // --- UPDATED CREDENTIALS FOR DEMO ---
-  private readonly VALID_USERNAME = 'nl';
+  private readonly VALID_USERNAME = 'test';
   private readonly VALID_PASSWORD = '123456';
   // --- END UPDATED CREDENTIALS ---
 

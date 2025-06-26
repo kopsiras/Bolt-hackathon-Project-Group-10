@@ -2,11 +2,12 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-knowledge-extraction',
   standalone: true, // Assuming it's a standalone component
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, NavbarComponent],
   templateUrl: './knowledge-extraction.component.html',
   styleUrls: ['./knowledge-extraction.component.css']
 })
@@ -21,6 +22,7 @@ export class KnowledgeExtractionComponent {
 
   uploading: boolean = false;
   uploadProgress: number = 0;
+  router: any;
 
   constructor() {}
 
@@ -58,6 +60,11 @@ export class KnowledgeExtractionComponent {
       this.uploadProgress = 0;
       console.log('No file selected.');
     }
+  }
+  
+  onLogout() {
+    console.log('Logout clicked');
+    this.router.navigate(['/login']);
   }
 
   private readFileContent(file: File): void {

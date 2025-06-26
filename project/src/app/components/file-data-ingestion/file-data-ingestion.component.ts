@@ -2,11 +2,12 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-file-data-ingestion',
   standalone: true, // Assuming it's a standalone component
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, NavbarComponent],
   templateUrl: './file-data-ingestion.component.html',
   styleUrls: ['./file-data-ingestion.component.css']
 })
@@ -20,6 +21,7 @@ export class FileDataIngestionComponent {
 
   uploading: boolean = false;
   uploadProgress: number = 0;
+  router: any;
 
   constructor() {}
 
@@ -59,6 +61,11 @@ export class FileDataIngestionComponent {
       this.uploadProgress = 0;
       console.log('No file selected.');
     }
+  }
+  
+  onLogout() {
+    console.log('Logout clicked');
+    this.router.navigate(['/login']);
   }
 
   private readFileContent(file: File): void {

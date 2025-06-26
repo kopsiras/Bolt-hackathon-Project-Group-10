@@ -21,12 +21,13 @@
             <label for="password" class="label">Password</label>
             <input
               id="password"
-              type="password"
+              [type]="passwordFieldType"
               [(ngModel)]="password"
               name="password"
               class="input-field"
               required
             />
+            <!-- You could add an eye icon here to toggle passwordFieldType -->
           </div>
 
           <div
@@ -69,7 +70,7 @@
           <label for="password-mobile" class="mobile-label">Password</label>
           <input
             id="password-mobile"
-            type="password"
+            [type]="passwordFieldType"
             [(ngModel)]="password"
             name="password"
             class="mobile-input"

@@ -1,10 +1,12 @@
 <div class="container">
+  <!-- Desktop/Tablet View -->
   <div class="desktop-view">
     <div class="card">
       <div class="card-content">
         <h2 class="title">Create Account</h2>
 
         <form (ngSubmit)="onSubmit()" class="form-container">
+          <!-- Email Input Group -->
           <div class="input-group">
             <label for="email" class="label">Email</label>
             <input
@@ -17,6 +19,7 @@
             />
           </div>
 
+          <!-- Username Input Group -->
           <div class="input-group">
             <label for="username" class="label">Username</label>
             <input
@@ -29,6 +32,7 @@
             />
           </div>
 
+          <!-- Password Input Group -->
           <div class="input-group">
             <label for="password" class="label">Password</label>
             <input
@@ -41,6 +45,24 @@
             />
           </div>
 
+          <!-- Confirm Password Input Group (Desktop) -->
+          <div class="input-group">
+            <label for="confirm-password" class="label">Confirm Password</label>
+            <input
+              id="confirm-password"
+              type="password"
+              [(ngModel)]="confirmPassword"
+              name="confirmPassword"
+              class="input-field"
+              required
+            />
+            <!-- Error message for password mismatch -->
+            <div *ngIf="passwordMismatch" class="message-box message-error">
+              Passwords do not match.
+            </div>
+          </div>
+
+          <!-- Message Box for general success/error messages -->
           <div
             *ngIf="message"
             class="message-box"
@@ -49,11 +71,13 @@
             {{ message }}
           </div>
 
+          <!-- Link to Login Page -->
           <div class="link-text">
             <span>Have an account? </span>
             <a routerLink="/login" class="link">Login now.</a>
           </div>
 
+          <!-- Submit Button Container -->
           <div class="button-container">
             <button type="submit" class="submit-button">Sign up</button>
           </div>
@@ -62,9 +86,11 @@
     </div>
   </div>
 
+  <!-- Mobile View -->
   <div class="mobile-view">
     <div class="form-wrapper">
       <form (ngSubmit)="onSubmit()" class="mobile-form">
+        <!-- Email Input Group (Mobile) -->
         <div class="input-group">
           <label for="email-mobile" class="mobile-label">Email</label>
           <input
@@ -77,6 +103,7 @@
           />
         </div>
 
+        <!-- Username Input Group (Mobile) -->
         <div class="input-group">
           <label for="username-mobile" class="mobile-label">Username</label>
           <input
@@ -89,6 +116,7 @@
           />
         </div>
 
+        <!-- Password Input Group (Mobile) -->
         <div class="input-group">
           <label for="password-mobile" class="mobile-label">Password</label>
           <input
@@ -101,6 +129,24 @@
           />
         </div>
 
+        <!-- Confirm Password Input Group (Mobile) -->
+        <div class="input-group">
+          <label for="confirm-password-mobile" class="mobile-label">Confirm Password</label>
+          <input
+            id="confirm-password-mobile"
+            type="password"
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+            class="mobile-input"
+            required
+          />
+          <!-- Error message for password mismatch (Mobile) -->
+          <div *ngIf="passwordMismatch" class="mobile-message-box mobile-message-error">
+            Passwords do not match.
+          </div>
+        </div>
+
+        <!-- Message Box for general success/error messages (Mobile) -->
         <div
           *ngIf="message"
           class="mobile-message-box"
@@ -109,11 +155,13 @@
           {{ message }}
         </div>
 
+        <!-- Link to Login Page (Mobile) -->
         <div class="mobile-link-text">
           <span>Have an account? </span>
           <a routerLink="/login" class="mobile-link">Login now.</a>
         </div>
 
+        <!-- Submit Button Container (Mobile) -->
         <div class="mobile-button-container">
           <button type="submit" class="mobile-button">Signup</button>
         </div>

@@ -1,12 +1,13 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms'; // Ensure FormsModule is imported if not already
+import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from "../navbar/navbar.component"; // Ensure FormsModule is imported if not already
 
 @Component({
   selector: 'app-file-data-digestion',
   standalone: true, // Assuming it's a standalone component
-  imports: [CommonModule, RouterModule, FormsModule], // Add FormsModule if you use ngModel elsewhere
+  imports: [CommonModule, RouterModule, FormsModule, NavbarComponent], // Add FormsModule if you use ngModel elsewhere
   templateUrl: './file-data-digestion.component.html',
   styleUrls: ['./file-data-digestion.component.css']
 })
@@ -19,6 +20,7 @@ export class FileDataDigestionComponent {
 
   uploading: boolean = false; // Flag to indicate if upload is in progress
   uploadProgress: number = 0; // Current upload progress percentage
+  router: any;
 
   constructor() {}
 
@@ -27,6 +29,8 @@ export class FileDataDigestionComponent {
     console.log('Upload here button clicked - triggering file input.');
     this.fileInput.nativeElement.click(); // Programmatically click the hidden file input
   }
+
+  
 
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -94,7 +98,10 @@ export class FileDataDigestionComponent {
       this.fileContent = null;
     };
   }
-
+  onLogout() {
+    console.log('Logout clicked');
+    this.router.navigate(['/login']);
+  }
   onComplete() {
     console.log('Complete clicked');
     if (!this.selectedFile) {
